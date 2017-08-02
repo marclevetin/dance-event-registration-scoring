@@ -1,6 +1,5 @@
 require 'rails_helper'
-
-require "spec_helper"
+require 'spec_helper'
 
 RSpec.describe Event, type: :model do
   describe "basic event modeling" do
