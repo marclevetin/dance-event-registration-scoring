@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170723015157) do
+ActiveRecord::Schema.define(version: 20170802035438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contests", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",      null: false
     t.datetime "time"
     t.integer  "event_id"
     t.datetime "created_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170723015157) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "event_name"
+    t.string   "event_name",          null: false
     t.date     "start_date"
     t.date     "end_date"
     t.string   "location"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20170723015157) do
   end
 
   create_table "judges", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name", null: false
+    t.string   "last_name",  null: false
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20170723015157) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",     null: false
+    t.string   "last_name",      null: false
     t.string   "email"
     t.integer  "wsdc_id"
     t.string   "street"
